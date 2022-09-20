@@ -1,5 +1,24 @@
-# Tachish's Blog
-## 目录
-- [Front-End](https://tachish.github.io/front-end/vue.md)
-- [Golang](https://tachish.github.io/golang/golang.md)
+# hello
 
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
