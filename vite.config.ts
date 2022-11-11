@@ -11,6 +11,9 @@ export default defineConfig({
     server: {
         port: 8080
     },
+    build: {
+        outDir: "./doc",
+    },
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "src"),
