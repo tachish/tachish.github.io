@@ -3,4 +3,4 @@ export enum EAvatarType {
     CIRCLE
 }
 
-export type AvatarWidth = 10 | 15 | 20 | 40;
+export type AvatarWidth = 2 | 4 | 10 | 15 | 20 | 40;

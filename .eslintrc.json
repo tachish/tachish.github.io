@@ -15,7 +15,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "ignorePatterns": ["**/*.css","**/*.md"],
+    "ignorePatterns": ["**/*.css","**/*.md", "./docs"],
     "plugins": [
         "vue",
         "@typescript-eslint"
