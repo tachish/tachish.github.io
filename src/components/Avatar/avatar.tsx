@@ -6,7 +6,7 @@ import {
 } from "vue";
 
 // types
-import { CustomCompProp } from "@/types/utils";
+import { CustomCompProp } from "@/types";
 import {
     EAvatarType,
     AvatarWidth
@@ -31,7 +31,7 @@ export const Avatar = defineComponent({
         width: {
             type: Number as CustomCompProp<AvatarWidth>,
             required: false,
-            default: 4
+            default: 3
         }
     },
     setup(props, { slots }) {

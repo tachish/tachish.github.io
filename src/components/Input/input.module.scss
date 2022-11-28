@@ -1,0 +1,44 @@
+@import "../themes/theme.scss";
+
+.tachi-input-wrapper {
+    height: #{var(--inline-height)};
+    border: #{var(--inline-wrapper-border-width)} solid #{var(--default-border-color)};
+    border-radius: #{var(--inline-radius)};
+    overflow: hidden;
+    box-sizing: content-box;
+    display: flex;
+    
+    background-color: #{var(--default-bg-color)};
+    color: #{var(--default-font-color)};
+}
+
+.tachi-input-focus-wrapper {
+    border: #{var(--inline-focus-border-width)} solid #0969da;
+}
+
+.tachi-input-slot-container {
+    display: flex;
+    align-items: center;
+}
+
+.tachi-input-prefix-container {
+    padding: 0rem #{var(--default-vertical-padding)};
+}
+
+.tachi-input-suffix-container {
+    padding: 0rem #{var(--default-vertical-padding)};
+}
+
+.tachi-input {
+    // default height
+    font-size: 1rem;
+    padding: 0rem #{var(--default-vertical-padding)};
+}
+
+input {
+    background: none;
+    outline: none;
+    caret-color: auto;
+    // border: none;
+}
+

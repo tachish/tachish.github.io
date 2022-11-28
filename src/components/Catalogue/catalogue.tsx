@@ -6,7 +6,7 @@ import {
 } from "vue";
 
 // types
-import { CustomCompProp } from "@/types/utils";
+import { CustomCompProp } from "@/types";
 import {
     CatalogueTree,
     CatalogueNode

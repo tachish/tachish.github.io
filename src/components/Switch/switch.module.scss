@@ -1,0 +1,61 @@
+@import "../themes/theme.scss";
+
+// TODO: add switch animation
+
+.tachi-switch-wrapper {
+    height: #{var(--inline-height)};
+    width: calc(#{var(--inline-height)} + #{var(--inline-height)});
+    border: #{var(--inline-wrapper-border-width)} solid #{var(--default-border-color)};
+    border-radius: #{var(--capsule-raius)};
+
+    background-color: var(--default-bg-color);
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tachi-switch-neg-wrapper {
+    &:hover {
+        border-color: var(--hover-border-color);
+    }
+}
+
+.tachi-switch-act-wrapper {
+    &:hover {
+        border-color: var(--hover-border-color);
+    }
+}
+
+
+.tachi-switch-gain {
+    height: calc(#{var(--inline-height)} - #{var(--default-vertical-padding)});
+    width: calc(#{var(--inline-height)} - #{var(--default-vertical-padding)});
+    border-radius: #{var(--capsule-raius)};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--default-font-color);
+}
+
+.tachi-switch-gain-negative {
+    background-color: #{var(--default-pure-white)};
+    animation: 0.1s ani-gain-negative forwards;
+}
+
+.tachi-switch-gain-active {
+    background-color: var(--default-pure-dark);
+    animation: 0.1s ani-gain-to-active forwards;
+}
+
+@keyframes ani-gain-to-active {
+    0% { transform: 0; }
+    50% { transform: translateX(#{var(--inline-height / 2)}); }
+    100% { transform: translateX(#{var(--inline-height)}) }
+}
+
+@keyframes ani-gain-negative {
+    0% { transform: translateX(#{var(--inline-height)}) }
+    50% { transform: translateX(#{var(--inline-height / 2)}); }
+    100% { transform: 0; }
+}
