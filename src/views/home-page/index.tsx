@@ -2,19 +2,21 @@ import {
     defineComponent,
 } from "vue";
 
-import { Avatar } from "@/components/Avatar/avatar";
-import avatarUrl from "@/assets/sakurajima.jpeg";
+import { ETheme } from "@/types";
+import { changeTheme } from "@/utils";
+
+import { NavBar } from "./components/navbar/navbar";
 
 export const HomePage = defineComponent({
     name: "HomePage",
     setup() {
         return () => (
             <div class={"tachi-home-page-container"}>
-                <Avatar url={avatarUrl} width={10} />
+                <NavBar />
             </div>
         );
     },
-    onMounted() {
-        console.log("[Home Page]", this.$slots.default);
+    mounted() {
+        changeTheme(ETheme.LIGHT);
     }
 });

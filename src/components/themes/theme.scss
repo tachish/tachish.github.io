@@ -1,0 +1,35 @@
+:root {
+    // normalization
+    caret-color: transparent;
+    
+    // css variables
+    --inline-height: 2rem;
+    
+    --inline-radius: 0.5rem;
+    --capsule-raius: 2rem;
+
+    --inline-wrapper-border-width: 0.1rem;
+    --inline-focus-border-width: 0.15rem;
+
+    --default-vertical-padding: 0.3rem;
+
+    --default-pure-white: #ffffff;
+    --default-pure-dark: #000000;
+    --default-light-dark: #1a1a1a;
+}
+
+:root [data-theme='light'] {
+    --default-font-color: #213547;
+    --default-bg-color: #f1f1f1;
+    --default-border-color: #d0d7de;
+    // hover darken 10%
+    --hover-border-color: #b2bec9;
+}
+
+:root [data-theme='dark'] {
+    --default-font-color: #ffffff;
+    --default-bg-color: #161b22;
+    // hover lighten 10%
+    --default-border-color: #d0d7de;
+    --hover-border-color: #eef1f3;
+}

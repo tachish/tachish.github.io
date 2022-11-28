@@ -6,7 +6,7 @@ import {
 } from "vue";
 
 // types
-import { CustomCompProp } from "@/types/utils";
+import { CustomCompProp } from "@/types";
 import {
     EAvatarType,
     AvatarWidth
@@ -31,7 +31,7 @@ export const Avatar = defineComponent({
         width: {
             type: Number as CustomCompProp<AvatarWidth>,
             required: false,
-            default: 10
+            default: 3
         }
     },
     setup(props, { slots }) {
@@ -42,24 +42,21 @@ export const Avatar = defineComponent({
         } = toRefs(props);
 
         return () => (
-            <>
-                <div class={{
+            <div
+                class={{
                     [styles["tachi-avatar-container"]]: true,
-                    [`w-${width.value}`]: true,
-                    [`h-${width.value}`]: true,
                     "rounded-full": type.value === EAvatarType.CIRCLE
+                }} style={{
+                    width: width.value + "rem",
+                    height: width.value + "rem",
                 }}>
-                    {
-                        !slots.default ? (
-                            <img
-                                src={url.value} />
-                        ) : renderSlot(slots, "default")
-                    }
-                </div>
-            </>
+                {
+                    !slots.default ? (
+                        <img
+                            src={url.value} />
+                    ) : renderSlot(slots, "default")
+                }
+            </div>
         );
-    },
-    async onMounted() {
-        console.log("[Avatar]", this.$slots.default);
     }
 });
