@@ -2,17 +2,43 @@ import {
     defineComponent,
 } from "vue";
 
+import styles from "./index.module.scss";
+
 import { ETheme } from "@/types";
 import { changeTheme } from "@/utils";
 
 import { NavBar } from "./components/navbar/navbar";
+import { SideBar } from "./components/sidebar/sidebar";
+import { MainContent } from "./components/main-content/content";
 
 export const HomePage = defineComponent({
     name: "HomePage",
     setup() {
         return () => (
-            <div class={"tachi-home-page-container"}>
-                <NavBar />
+            <div
+                class={{
+                    [styles["tachi-home-page-container"]]: true
+                }}>
+                <div
+                    class={{
+                        [styles["tachi-home-page-sidebar"]]: true
+                    }}>
+                    <SideBar
+                        class={{
+                            [styles["tachi-home-page-sidebar"]]: true
+                        }} />
+                </div>
+                <div
+                    class={{
+                        [styles["tachi-home-page-main"]]: true
+                    }}>
+                    <NavBar />
+                    <div class={{
+                        [styles["tachi-home-page-content"]]: true
+                    }}>
+                        <MainContent />
+                    </div>
+                </div>
             </div>
         );
     },

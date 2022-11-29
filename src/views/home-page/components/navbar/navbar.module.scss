@@ -1,6 +1,6 @@
 .tachi-navbar-container {
-    background-color: var(--default-bg-color);
-    padding: 0.3rem 1rem;
+    background-color: var(--navbar-bg-color);
+    padding: var(--default-vertical-padding) var(--default-horizental-padding);
 
     display: flex;
     align-items: center;
@@ -36,7 +36,7 @@
 }
 
 .github-icon {
-    font-size: 2rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     color: var(--default-font-color);

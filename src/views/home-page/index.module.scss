@@ -1,0 +1,27 @@
+.tachi-home-page-container {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+
+    display: flex;
+    flex-direction: row;
+}
+
+// NOTE: need to keep background color with navbar, so imple by itself.
+.tachi-home-page-sidebar {
+    background-color: transparent;
+}
+
+.tachi-home-page-main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    background-color: var(--default-bg-color);
+    color: var(--default-font-color);
+
+    .tachi-home-page-content {
+        flex-grow: 1;
+        height: 100%;
+    }
+}
