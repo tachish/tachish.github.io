@@ -24,6 +24,7 @@
     --default-border-color: #d0d7de;
     // hover darken 10%
     --hover-border-color: #b2bec9;
+    --focus-border-color: #eea2a4;
 }
 
 :root [data-theme='dark'] {
@@ -32,4 +33,5 @@
     // hover lighten 10%
     --default-border-color: #d0d7de;
     --hover-border-color: #eef1f3;
+    --focus-border-color: #0969da;
 }

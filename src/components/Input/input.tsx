@@ -8,7 +8,8 @@ import {
     ref,
     defineComponent,
     Ref,
-    isRef
+    isRef,
+    toRefs
 } from "vue";
 
 // types
@@ -26,9 +27,9 @@ import {
 export const Input = defineComponent({
     name: "CustomInput",
     props: {
-        value: {
+        modelValue: {
             type: String as CustomCompProp<Ref | string>,
-            required: true,
+            required: false,
             default: () => ""
         },
         placeholder: {
@@ -38,7 +39,7 @@ export const Input = defineComponent({
         }
     }, 
 
-    setup(props, { slots }) {
+    setup(props, { slots, emit }) {
         const containerCls = useCompNameSpace("input-wrapper", styles);
         const focusedContainerCls = useCompNameSpace("input-focus-wrapper", styles);
 
@@ -58,6 +59,7 @@ export const Input = defineComponent({
         const height = ref(2);
         const focused = ref(false);
 
+        const { modelValue } = toRefs(props);
         const normalizedValue = (inputValue) => {
             if (isRef(inputValue)) {
                 return inputValue.value;
@@ -91,8 +93,19 @@ export const Input = defineComponent({
                     style={{
                         height: height.value + "rem"
                     }}
-                    value={normalizedValue(props.value)}
-                    placeholder={props.placeholder}>
+                    value={normalizedValue(modelValue)}
+                    placeholder={props.placeholder}
+                    onInput={(e) => {
+                        const newValue = (e.target as any).value;
+                        if (typeof newValue === "string") {
+                            emit("update:modelValue", newValue);
+                        }
+                    }}
+                    onChange={(e) => {
+                        e.stopPropagation();
+                        const newValue = (e.target as any).value;
+                        emit("change", newValue);
+                    }}>
                 </input>
                 {
                     slots.suffix &&
