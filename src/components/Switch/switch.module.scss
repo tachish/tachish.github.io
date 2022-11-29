@@ -1,7 +1,5 @@
 @import "../themes/theme.scss";
 
-// TODO: add switch animation
-
 .tachi-switch-wrapper {
     height: #{var(--inline-height)};
     width: calc(#{var(--inline-height)} + #{var(--inline-height)});

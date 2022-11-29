@@ -10,10 +10,14 @@
     
     background-color: #{var(--default-bg-color)};
     color: #{var(--default-font-color)};
+
+    &:hover {
+        border-color: var(--hover-border-color);
+    }
 }
 
 .tachi-input-focus-wrapper {
-    border: #{var(--inline-focus-border-width)} solid #0969da;
+    border: #{var(--inline-focus-border-width)} solid var(--focus-border-color) !important;
 }
 
 .tachi-input-slot-container {

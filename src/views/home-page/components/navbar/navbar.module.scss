@@ -4,7 +4,21 @@
 
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
+    .tachi-navbar-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .tachi-navbar-item:last-of-type {
+        margin-left: 1rem;
+    }
+    .tachi-navbar-item-full {
+        flex-grow: 1;
+    }
+}
+
+.avatar {
+    margin-right: 1rem;
 }
 
 .search-icon {
@@ -19,4 +33,13 @@
 .dark-theme-icon {
     display: flex;
     margin-left: 4px;
+}
+
+.github-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    color: var(--default-font-color);
+    cursor: pointer;
+    transform: translateY(-0.1rem);
 }
