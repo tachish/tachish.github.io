@@ -8,7 +8,7 @@
     box-sizing: content-box;
     display: flex;
     
-    background-color: #{var(--default-bg-color)};
+    background-color: #{var(--navbar-bg-color)};
     color: #{var(--default-font-color)};
 
     &:hover {

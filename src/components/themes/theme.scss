@@ -12,6 +12,7 @@
     --inline-focus-border-width: 0.15rem;
 
     --default-vertical-padding: 0.3rem;
+    --default-horizental-padding: 1rem;
 
     --default-pure-white: #ffffff;
     --default-pure-dark: #000000;
@@ -20,18 +21,22 @@
 
 :root [data-theme='light'] {
     --default-font-color: #213547;
-    --default-bg-color: #f1f1f1;
     --default-border-color: #d0d7de;
+    --navbar-bg-color: #f1f1f1;
+    --default-bg-color: #e4e4e4;
+
     // hover darken 10%
     --hover-border-color: #b2bec9;
-    --focus-border-color: #eea2a4;
+    --focus-border-color: #0969da;
 }
 
 :root [data-theme='dark'] {
     --default-font-color: #ffffff;
-    --default-bg-color: #161b22;
-    // hover lighten 10%
     --default-border-color: #d0d7de;
+
+    --navbar-bg-color: #161b22;
+    --default-bg-color: #0d1117;
+    // hover lighten 10%
     --hover-border-color: #eef1f3;
     --focus-border-color: #0969da;
 }
