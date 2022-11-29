@@ -33,7 +33,13 @@ export const NavBar = defineComponent({
             }
         };
 
-        const swtichValue = ref(false);
+        const getCurrentTheme = () => {
+            const bodyEle = document.querySelector("body");
+            return (bodyEle as HTMLElement).getAttribute("data-theme");
+        };
+        const theme = getCurrentTheme();
+
+        const swtichValue = ref(theme === ETheme.DARK);
         const switchSlots = {
             negetiveGain: () => {
                 return (
