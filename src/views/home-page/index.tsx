@@ -6,6 +6,7 @@ import styles from "./index.module.scss";
 
 import { ETheme } from "@/types";
 import { changeTheme } from "@/utils";
+import dayjs from "dayjs";
 
 import { NavBar } from "./components/navbar/navbar";
 import { SideBar } from "./components/sidebar/sidebar";
@@ -42,7 +43,14 @@ export const HomePage = defineComponent({
             </div>
         );
     },
-    mounted() {
-        changeTheme(ETheme.LIGHT);
-    }
+    created() {
+        const nowHour = dayjs().hour();
+        console.log("[new hour]", nowHour);
+        
+        if (nowHour > 6 && nowHour < 19) {
+            changeTheme(ETheme.LIGHT);
+        } else {
+            changeTheme(ETheme.DARK);
+        }
+    },
 });
