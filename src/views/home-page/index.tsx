@@ -24,10 +24,7 @@ export const HomePage = defineComponent({
                     class={{
                         [styles["tachi-home-page-sidebar"]]: true
                     }}>
-                    <SideBar
-                        class={{
-                            [styles["tachi-home-page-sidebar"]]: true
-                        }} />
+                    <SideBar />
                 </div>
                 <div
                     class={{
