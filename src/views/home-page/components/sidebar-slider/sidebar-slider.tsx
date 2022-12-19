@@ -22,13 +22,17 @@ export const SideBarSlider = defineComponent({
             type: Number,
             required: true,
             default: 0
+        },
+        sticky: {
+            type: Boolean,
+            required: true
         }
     }, 
     setup(props, { emit }) {
         const {
             width,
             minWidth,
-            maxWidth
+            maxWidth,
         } = toRefs(props);
 
         let startWidth = 0;
@@ -36,11 +40,12 @@ export const SideBarSlider = defineComponent({
         const dragLock = ref<boolean>(false);
         const dragMakLayerVisible = ref<boolean>(false);
         let dragStartPosition:number = undefined;
+
         return () => (
             <>
                 <div
                     class={{
-                        [styles["tachi-sidebar-drag-slide-container"]]: true, 
+                        [styles["tachi-sidebar-drag-slide-container"]]: true
                     }}
                     onMousedown={(e) => {
                         dragLock.value = false;
@@ -63,13 +68,11 @@ export const SideBarSlider = defineComponent({
                             class={{
                                 [styles["tachi-sidebar-drag-navbar"]]: true
                             }}>
-
                         </div>
                         <div
                             class={{
                                 [styles["tachi-sidebar-drag-content"]]: true
                             }}>
-                            
                         </div>
                     </div>
                     <div

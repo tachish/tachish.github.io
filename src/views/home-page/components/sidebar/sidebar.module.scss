@@ -1,3 +1,14 @@
+.thumbtack-icon {
+    display: inline-block;
+    &::before {
+        cursor: pointer;
+    }
+}
+
+.erect-thumbtack-icon {
+    transform: rotate(-45deg);
+}
+
 .tachi-sidebar-container {
     height: 100%;
     color: var(--default-font-color);
@@ -18,5 +29,51 @@
             flex-grow: 1;
             background-color: var(--default-bg-color);
         }
+    }
+}
+
+.tachi-sidebar-unstick-container {
+    width: 0px;
+    overflow: hidden;
+    animation: 1s sidebar-hide forwards;
+}
+
+.tachi-sidebar-unstick-show {
+    animation: 1s sidebar-show forwards;
+}
+
+.tachi-sidebar-unstick-hide {
+    animation: 1s sidebar-hide forwards;
+}
+
+@keyframes sidebar-hide {
+    0% { width: 15rem; }
+    50% { width: 7.5rem; }
+    100% { width: 0px !important; }
+}
+
+@keyframes sidebar-show {
+    0% { width: 0px; }
+    50% { width: 7.5rem; }
+    100% { width: 15rem !important; }
+}
+
+.tachi-sidebar-stick-btn {
+    padding: var(--default-vertical-padding) 0rem;
+    border-radius: 0 #{var(--inline-radius)} #{var(--inline-radius)} 0;
+    border-top: #{var(--inline-wrapper-border-width)} solid #{var(--default-border-color)};
+    border-right: #{var(--inline-wrapper-border-width)} solid #{var(--default-border-color)};
+    border-bottom: #{var(--inline-wrapper-border-width)} solid #{var(--default-border-color)};
+    color: var(--default-font-color);
+    background-color: var(--navbar-bg-color);
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    display: flex;
+    writing-mode: vertical-lr;
+
+    &:hover {
+        border-color: var(--hover-border-color);
     }
 }
