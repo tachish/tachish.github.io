@@ -38,7 +38,6 @@ export const Input = defineComponent({
             default: "请输入"
         }
     }, 
-
     setup(props, { slots, emit }) {
         const containerCls = useCompNameSpace("input-wrapper", styles);
         const focusedContainerCls = useCompNameSpace("input-focus-wrapper", styles);
